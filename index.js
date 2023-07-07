@@ -8,9 +8,9 @@ import {
   Outlet,
   createRoutesFromElements,
 } from "react-router-dom";
-import Products from "./pages/Products";
-import Home from "./pages/Home";
-import Reports from "./pages/Reports";
+import Products from "./pages/products";
+import Home from "./pages/home";
+import Reports from "./pages/reports";
 import Navbar from "./components/sidebar";
 import "./App.css";
 
