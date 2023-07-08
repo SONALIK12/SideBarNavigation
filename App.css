@@ -1,40 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
+@import '~antd/dist/reset.css';
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
 }
 
-.home,
-.reports,
-.products {
-  display: flex;
-  height: 90vh;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  background-color: #000;
-  color: #fff;
+a {
+  text-decoration: none;
 }
 
-/* Navbar CSS */
-.navbar {
-  background-color: #ffffff;
-  height: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.title{
+  font-size: 15px;
+  color: white;
 }
 
-.menu-bars {
-  margin-left: 2rem;
-  font-size: 2rem;
-  background: none;
-  color: #000;
+.sidebar{
+  background: darkcyan;
+  color: white;
+  height: 100vh;
+  width: 200px;
 }
-
 .nav-menu {
   background-color: #ffffff;
   width: 250px;
@@ -46,12 +31,10 @@
   left: -100%;
   transition: 850ms;
 }
-
 .nav-menu.active {
   left: 0;
   transition: 450ms;
 }
-
 .nav-text {
   display: flex;
   justify-content: flex-start;
@@ -77,20 +60,73 @@
   background-color: #000000;
   color: #fff;
 }
-
-.nav-menu-items {
-  width: 100%;
-}
-
-.navbar-toggle {
-  background-color: #ffffff;
-  width: 100%;
-  height: 80px;
+.top_section{
   display: flex;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: space-between;
+  padding: 10px 7px;
 }
 
-span {
-  margin-left: 16px;
+.bars{
+  color: white;
+  font-size: 20x;
+  margin-top: 2px;
+  margin-bottom: 5px;
+}
+
+.logo{
+  color: white;
+  font-size: 25px;
+  line-height: 0;
+}
+
+.search{
+  display: flex;
+  align-items: center;
+  margin: 5px 5px;
+  height: 50px;
+  padding: 4px ;
+}
+
+
+
+.search input{
+  border: none;
+  width: 150px;
+  margin-left: 6px;
+  border-radius: 6px;
+  background: rgb(238, 238, 236);
+  height: 27px;
+}
+.search_icon{
+  color: white;
+  font-size: 22px;
+}
+
+.link{
+  display: flex;
+  color: white;
+  gap: 10px;
+  padding: 5px 7px;
+  border-right: 4px solid transparent;
+  transition: 0.2s cubic-bezier(0.6,-0.28,0.735,0.045);
+}
+
+.link-text{
+  font-style: initial;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.icon{
+  font-size: x-large;
+}
+
+
+
+.link:hover{
+  border-right:4px solid ;
+  color: white;
+  transition: 0.1s cubic-bezier(0.6,-0.28,0.735,0.045);
+  background: rgb(58, 48, 62);
 }
