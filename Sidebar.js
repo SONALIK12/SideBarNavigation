@@ -1,44 +1,128 @@
-import React, {useState} from 'react';
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-import {Link} from "react-router-dom";
-import { SidebarData} from "./sidebardata";
-import "../App.css";
-import {IconContext} from "react-icons";
+import { NavLink } from "react-router-dom";
+import SidebarMenu from "./sidebarmenu";
+import {FaBars, FaHome,FaUser} from 'react-icons/fa';
+import {AiFillMessage} from 'react-icons/ai';
+import {BsFiles} from 'react-icons/bs';
+import {IoIosAnalytics} from 'react-icons/io';
+import {IoMdSettings } from 'react-icons/io';
+import {BiSearch} from 'react-icons/bi';
+import { AnimatePresence, motion } from "framer-motion";
 
-function Sidebar() {
-    const [sidebar, setSidebar]= useState(false);
-    const showSidebar=() => setSidebar(!sidebar);
-  return (
-    <div >
-        <IconContext.Provider value={{color:"undefined"}}>
-        <div className="sidebar">
-        <Link to="#" className="menu-bars">
-            <FaIcons.FaBars onClick={showSidebar}/>
-            </Link>
+
+const routes = [
+    {
+        path: '/',
+        name: 'Dashboard',
+        icon: <FaHome />
+    },
+    {
+      path: 'analytics',
+      name: 'Analytics',
+      icon: <IoIosAnalytics />
+    },
+    {
+      path: 'files',
+      name: 'Storage',
+      icon: <BsFiles />
+    },
+    {
+      path: 'msg',
+      name: 'Message',
+      icon: <AiFillMessage />
+    },
+    {
+      path: 'settings',
+      name: 'Settings',
+      icon: <IoMdSettings />
+    },
+    {
+        path: "/users",
+        name: " ",
+    },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      {
+        path: "/users",
+        name: " ",
+        
+      },
+      
+    {
+        path: "/users",
+        name: "Profile",
+        icon: <FaUser />,
+      },
+];
+
+const SideBar = ({children}) => {
+
+  // const [isOpen,setIsOpen] =useState(false);
+
+  // const toggle = () => setIsOpen(!isOpen);
+
+    return (
+        <div className="main-container">
+          <div className="sidebar">
+          <main>{children}</main>
+
+            <div className="top_section">
+              <h1 className="logo">SIDEBAR</h1>
+              <div className="bars"><FaBars/></div>
             </div>
-            <nav className={sidebar ? "nav-menu active": "nav-menu"}>
-                <ul className='nav-menu-items' onClick={showSidebar}>
-                    <li className='navbar-toggle'>
-                    <Link to="#" className="menu-bars">
-                        <AiIcons.AiOutlineClose/>
-                        </Link>
-                    </li>
-                    {SidebarData.map((item,index)=>{
-                        return(
-                            <li key={index} className={item.cName}>
-                                <Link to={item.path}>
-                                    <span>{item.title}</span>
-                                </Link>
-                            </li>
-                        );
-                    }
-                    )}
-                </ul>
-            </nav>
-        </IconContext.Provider>
-</div>
-  );
-}
 
-export default Sidebar;
+            <div className="search">
+            <input type="text" placeholder="Type here..." />
+              <div className="search_icon"><BiSearch/></div>
+             
+            </div>
+            
+          <section className="routes">
+            {routes.map((route) => (
+              <NavLink to={route.path} key={route.name} className="link">
+                <div className="icon">{route.icon}</div>
+                <div className="link-text">{route.name}</div>
+              </NavLink>
+            ))}
+          </section>
+          
+          </div>  
+        </div> 
+    )
+  }
+  
+  
+  
+  export default SideBar;
